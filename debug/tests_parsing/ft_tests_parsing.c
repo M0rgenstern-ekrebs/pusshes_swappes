@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.h                                           :+:      :+:    :+:   */
+/*   ft_tests_parsing.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 17:29:52 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 16:20:16 by ekrebs           ###   ########.fr       */
+/*   Created: 2024/08/16 17:12:18 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/16 17:28:49 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERRORS_H
-# define ERRORS_H
+#include "../debug.h"
 
-# ifndef VERBOSE
-#  define VERBOSE 0
-# endif
 
-# include <stdlib.h>
-
-typedef enum e_exit_status
+ft_tests_parsing(int *err)
 {
-	SUCCESS = 0,
-	ERR,
-	ERR_MALLOC,
-	ERR_IS_NULL
-}	t_exit_status;
+	char are_numbers[][64] = {itoa(1), itoa(INT_MAX), itoa(INT_MIN), itoa(0), itoa(CHAR_MAX * 25), itoa(INT_MAX/2), itoa(INT_MIN/2), " 1234", "1234 "};
+	char not_numbers[][64] = {"1E", itoa(INT_MAX + 1), itoa(INT_MIN - 1), "1354 54", "123E4", "123E", "E", "1234567890123" };
 
-enum e_errors
-{
-	ERR_PARSING,
-	ERR_NAN
-};
-
-#endif
+	
+	return (SUCCESS);
+}

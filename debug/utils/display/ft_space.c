@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.h                                           :+:      :+:    :+:   */
+/*   ft_space.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 17:29:52 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 16:20:16 by ekrebs           ###   ########.fr       */
+/*   Created: 2023/12/17 17:34:18 by ekrebs            #+#    #+#             */
+/*   Updated: 2023/12/17 17:36:41 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERRORS_H
-# define ERRORS_H
+#include "../../debug.h"
 
-# ifndef VERBOSE
-#  define VERBOSE 0
-# endif
-
-# include <stdlib.h>
-
-typedef enum e_exit_status
+void space()
 {
-	SUCCESS = 0,
-	ERR,
-	ERR_MALLOC,
-	ERR_IS_NULL
-}	t_exit_status;
-
-enum e_errors
-{
-	ERR_PARSING,
-	ERR_NAN
-};
-
-#endif
+	printf("\n");
+}

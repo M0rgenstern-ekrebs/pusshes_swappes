@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.h                                           :+:      :+:    :+:   */
+/*   ft_printf_chars.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 17:29:52 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 16:20:16 by ekrebs           ###   ########.fr       */
+/*   Created: 2023/12/17 15:16:20 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/16 18:13:29 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERRORS_H
-# define ERRORS_H
+#include "../../debug.h"
 
-# ifndef VERBOSE
-#  define VERBOSE 0
-# endif
-
-# include <stdlib.h>
-
-typedef enum e_exit_status
+void str_printf_chars(char *str)
 {
-	SUCCESS = 0,
-	ERR,
-	ERR_MALLOC,
-	ERR_IS_NULL
-}	t_exit_status;
-
-enum e_errors
-{
-	ERR_PARSING,
-	ERR_NAN
-};
-
-#endif
+	int i = 0;
+	if (!str)
+	{
+		printf("NULL");
+		return ;
+	}
+	while (str[i])
+	{
+		if(str[i] == '\n')
+			printf("\\n");
+		else
+			printf("%c", str[i]);
+		i++;
+	}
+	printf("\\0");
+}

@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.h                                           :+:      :+:    :+:   */
+/*   ft_main_tests.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 17:29:52 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 16:20:16 by ekrebs           ###   ########.fr       */
+/*   Created: 2024/08/16 16:24:17 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/08/16 17:39:28 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERRORS_H
-# define ERRORS_H
+#include "debug.h"
 
-# ifndef VERBOSE
-#  define VERBOSE 0
-# endif
-
-# include <stdlib.h>
-
-typedef enum e_exit_status
+t_exit_status	ft_main_tests(void)
 {
-	SUCCESS = 0,
-	ERR,
-	ERR_MALLOC,
-	ERR_IS_NULL
-}	t_exit_status;
+	int err;
 
-enum e_errors
-{
-	ERR_PARSING,
-	ERR_NAN
-};
+	title(" 🤺 %s 🤺 \n", __FUNCTION__);
 
-#endif
+	err = 0;
+	if (ft_tests_parsing(&err) != 0);
+		return (err);
+	if (ft_tests_stack(&err) != 0);
+		return (err);
+	if (ft_tests_solver(&err) != 0);
+		return (err);
+
+	section(" t'was all the test ! 🌟\n");
+	return (SUCCESS);
+}

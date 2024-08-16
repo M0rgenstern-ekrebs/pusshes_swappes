@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.h                                           :+:      :+:    :+:   */
+/*   ft_section.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 17:29:52 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 16:20:16 by ekrebs           ###   ########.fr       */
+/*   Created: 2023/12/17 15:25:54 by ekrebs            #+#    #+#             */
+/*   Updated: 2023/12/17 18:28:05 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERRORS_H
-# define ERRORS_H
+#include "../../debug.h"
 
-# ifndef VERBOSE
-#  define VERBOSE 0
-# endif
-
-# include <stdlib.h>
-
-typedef enum e_exit_status
+void section(char *str)
 {
-	SUCCESS = 0,
-	ERR,
-	ERR_MALLOC,
-	ERR_IS_NULL
-}	t_exit_status;
-
-enum e_errors
-{
-	ERR_PARSING,
-	ERR_NAN
-};
-
-#endif
+	COLOR_SECTION;
+	if (!str)
+		printf("\n\n\n------------------------------------------------------------\n\n\n");
+	else
+		printf("\n\n\n#---------------------------#%s#---------------------------#\n\n\n", str);
+	COLOR_DEFAULT;
+}

@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.h                                           :+:      :+:    :+:   */
+/*   ft_title.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 17:29:52 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 16:20:16 by ekrebs           ###   ########.fr       */
+/*   Created: 2023/12/17 15:42:00 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/01/08 17:17:20 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERRORS_H
-# define ERRORS_H
+#include "../../debug.h"
 
-# ifndef VERBOSE
-#  define VERBOSE 0
-# endif
-
-# include <stdlib.h>
-
-typedef enum e_exit_status
+void title(char *str)
 {
-	SUCCESS = 0,
-	ERR,
-	ERR_MALLOC,
-	ERR_IS_NULL
-}	t_exit_status;
-
-enum e_errors
-{
-	ERR_PARSING,
-	ERR_NAN
-};
-
-#endif
+	COLOR_TITLE;
+	printf("\n=================================================\n");
+	printf("=\t\t%s\n", str);
+	printf("=================================================\n");
+	COLOR_DEFAULT;
+}

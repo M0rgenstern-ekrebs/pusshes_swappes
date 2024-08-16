@@ -6,12 +6,12 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 19:57:34 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 12:03:59 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/16 16:27:45 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap/stack/stack.h"
-#include <stdio.h>
+#include "debug.h"
+
 
 /**
  * prints the node content

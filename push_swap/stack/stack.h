@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 16:50:00 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 15:52:32 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/16 17:02:35 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_node
 typedef struct s_stack
 {
 	t_node	*top;
-	t_stack t_stk;
 	int		nb;
 } t_stack, t_stk;
 
