@@ -18,6 +18,17 @@ SRCS =	main.c	\
 		stack/utils/stack/ft_stack_free.c		\
 		stack/utils/stack/ft_stack_is_empty.c	\
 		\
+		parsing/ft_parsing.c			\
+		parsing/ft_check_for_doubles.c	\
+		parsing/ft_verif_valur_ini.c	\
+		\
+		parsing/utils/ft_is_space.c		\
+		parsing/utils/ft_is_digit.c		\
+		parsing/utils/ft_is_number.c	\
+		parsing/utils/ft_atoi.c			\
+		parsing/utils/ft_strlen.c		\
+		parsing/utils/ft_strncmp.c		\
+		\
 
 PROG = srcs/push_swap.c
 

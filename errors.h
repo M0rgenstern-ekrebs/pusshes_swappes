@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 17:29:52 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/07/28 19:57:01 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/02 17:00:38 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,11 @@ typedef enum e_exit_status
 	ERR_MALLOC,
 	ERR_IS_NULL
 }	t_exit_status;
+
+enum e_errors
+{
+	ERR_PARSING,
+	ERR_NAN
+};
 
 #endif

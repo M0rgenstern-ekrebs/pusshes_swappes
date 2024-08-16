@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_is_digit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 16:51:50 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/02 17:01:51 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/02 16:36:00 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/02 20:30:38 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../parsing.h"
 
-int	main(int argc, char *argv[])
+int	ft_is_digit(int c)
 {
-	int err;
-
-	err = 0;
-	err = ft_parsing(argc, argv);
-	if (err)
-		return (write(2, "Error\n", 6), ERR_PARSING);
-
-    return (err);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

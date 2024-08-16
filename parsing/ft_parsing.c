@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 16:51:50 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/02 17:01:51 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/02 17:01:53 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/02 20:31:13 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "parsing.h"
 
-int	main(int argc, char *argv[])
+int	ft_parsing(int argc, char *argv[])
 {
-	int err;
+	int error;
+	int i;
 
-	err = 0;
-	err = ft_parsing(argc, argv);
-	if (err)
-		return (write(2, "Error\n", 6), ERR_PARSING);
-
-    return (err);
+	error = 0;
+	i = 1;
+	printf("\n");
+	while (argv[i])
+	{
+		if (ft_verif_value_ini(argv[i], error) != 0)
+			return (-1);
+		i++;
+	}
+	if (ft_check_for_doubles(argv, error) != 0 || error)
+		return (-1);
+    return (0);
 }

@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_for_doubles.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 16:51:50 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/02 17:01:51 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/02 16:33:29 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/02 16:55:03 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "parsing.h"
 
-int	main(int argc, char *argv[])
+int	ft_check_for_doubles(char *argv[], int *error)
 {
-	int err;
+	int	i;
+	int	j;
 
-	err = 0;
-	err = ft_parsing(argc, argv);
-	if (err)
-		return (write(2, "Error\n", 6), ERR_PARSING);
-
-    return (err);
+	j = 1;
+	i = 1;
+	while (argv[i])
+	{
+		while (argv[j])
+		{
+			if (ft_atoi(argv[i], error) == ft_atoi(argv[j], error))
+				return (-1);
+			j++;
+		}
+		i++;
+		j = i + 1;
+	}
+	return (0);
 }

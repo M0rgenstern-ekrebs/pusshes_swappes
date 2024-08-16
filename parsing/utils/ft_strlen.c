@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 16:51:50 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/02 17:01:51 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/02 16:37:26 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/02 20:29:56 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../parsing.h"
 
-int	main(int argc, char *argv[])
+size_t	ft_strlen(const char *s)
 {
-	int err;
+	size_t	i;
 
-	err = 0;
-	err = ft_parsing(argc, argv);
-	if (err)
-		return (write(2, "Error\n", 6), ERR_PARSING);
-
-    return (err);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
