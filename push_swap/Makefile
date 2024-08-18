@@ -12,6 +12,10 @@ SRCS =	\
 		push_swap/stack/operations/ft_stack_add_top.c					\
 		push_swap/stack/operations/ft_stack_delete_top.c				\
 		push_swap/stack/operations/ft_stack_is_empty.c					\
+		push_swap/stack/operations/ft_stack_ind_max.c					\
+		push_swap/stack/operations/ft_stack_ind_min.c					\
+		push_swap/stack/operations/ft_stack_is_sorted.c					\
+		push_swap/stack/operations/ft_stack_length.c					\
 		push_swap/stack/operations/ft_stack_median.c					\
 		\
 		push_swap/stack/ft_stack_create.c								\

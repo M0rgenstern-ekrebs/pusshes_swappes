@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 16:50:00 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/18 13:46:43 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/18 17:29:04 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,14 @@ typedef struct s_stack
 
 t_stack				*ft_stack_create(void);
 void				ft_stack_free(t_stack *stk);
+
 t_exit_status		ft_stack_add_top(t_stack *stk, int content);
 t_exit_status		ft_stack_delete_top(t_stack *stk);
+int					ft_stack_ind_max(t_stack *stk);
+int					ft_stack_ind_min(t_stack *stk);
 int					ft_stack_is_empty(t_stack *stk);
+int					ft_stack_is_sorted(t_stack *stk);
+int					ft_stack_length(t_stack *stk);
 int					ft_stack_median(t_stack stk);
 
 /* subject operations : */
