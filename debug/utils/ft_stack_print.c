@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_print.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 19:57:34 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 16:27:45 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/18 09:22:09 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_exit_status	ft_stack_print_parcours(t_stack *stk)
 
 	if (!stk)
 		return(ERR);
-	
+
+	printf("______ A ______\n");
 	node = stk->top;
 	if (!node)
 	{

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_verif_value_ini.c                               :+:      :+:    :+:   */
+/*   ft_is_integer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 16:32:15 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/02 16:54:42 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/18 14:58:14 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/18 15:07:03 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 
-static char	*trim_zero_and_sign(char *value, int *psign)
+static char	*trim_sign_and_zeros(char *value, int *psign)
 {
 	int	i;
 
@@ -30,40 +30,27 @@ static char	*trim_zero_and_sign(char *value, int *psign)
 	return (ft_substr(value, i, ft_strlen(value)));
 }
 
-int	ft_verif_integer(char *value)
+static int	ft_is_integer(char *str_nb, int *error)
 {
-	int	len;
-	int	sign;
-	int	*psign;
-	int	sec;
+	long	value;
+	int		len;
+	int		sign;
 
-	sec = 0;
-	psign = &sign;
+	*error = 0;
 	sign = 1;
-	value = trim_zero_and_sign(value, psign);
-	if (!value)
-		return (-1);
-	len = ft_strlen(value);
+	str_nb = trim_sign_and_zeros(str_nb, &sign);
+	if (!str_nb)
+		return (ERR);
+	len = ft_strlen(str_nb);
 	if (len > 10)
-		return (-1);
+		return (ERR);
 	if (len == 10)
 	{
-		if (sign == 1)
-			sec = ft_strncmp("2147483647", value, len);
-		else
-			sec = ft_strncmp("2147483648", value, len);
+		value = ft_atoi(str_nb, error);
+        if (*error)
+            return (free(str_nb), *error = ERR, ERR);
+		if (sign == -1)
+			value *= -1;
 	}
-	free(value);
-	return (sec);
-}
-
-int	ft_verif_value_ini(char *value, int *error)
-{
-	if (!value)
-		return (*error = -666, -666);
-	if (ft_is_number(value) != 1)
-		return (*error = -666, -666);
-	if (ft_verif_integer(value) != 0)
-		return (*error = -666, -666);
-	return (0);
+	return (free(str_nb), value);
 }

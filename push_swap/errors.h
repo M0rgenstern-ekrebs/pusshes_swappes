@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 17:29:52 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 16:20:16 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/18 13:49:41 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 typedef enum e_exit_status
 {
 	SUCCESS = 0,
-	ERR,
+	ERR = -1,
 	ERR_MALLOC,
 	ERR_IS_NULL
 }	t_exit_status;

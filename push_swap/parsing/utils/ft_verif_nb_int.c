@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_for_doubles.c                             :+:      :+:    :+:   */
+/*   ft_verif_nb_int.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 16:33:29 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/02 16:55:03 by m0rgenstern      ###   ########.fr       */
+/*   Created: 2024/08/02 16:32:15 by m0rgenstern       #+#    #+#             */
+/*   Updated: 2024/08/18 15:41:41 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 
-int	ft_check_for_doubles(char *argv[], int *error)
+int	ft_verif_nb_int(char *value)
 {
-	int	i;
-	int	j;
-
-	j = 1;
-	i = 1;
-	while (argv[i])
-	{
-		while (argv[j])
-		{
-			if (ft_atoi(argv[i], error) == ft_atoi(argv[j], error))
-				return (-1);
-			j++;
-		}
-		i++;
-		j = i + 1;
-	}
-	return (0);
+	if (!value)
+		return (ERR);
+	if (ft_is_number(value) != 1)
+		return (ERR);
+	if (ft_is_integer(value) != SUCCESS)
+		return (ERR);
+	return (SUCCESS);
 }

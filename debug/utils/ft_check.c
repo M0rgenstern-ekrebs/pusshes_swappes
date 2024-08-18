@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:52:51 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 19:03:59 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/18 07:57:47 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,13 @@ static void	ft_print_int_values_table(int *int_table, int size)
 	}
 }
 
-void check(char *got, char *expected, t_data_types type, int size)
+t_exit_status	check(char *got, char *expected, t_data_types type, int size)
 {
+	int err;
 	int got_size;
 	int expected_size;
 
+	err = 0;
 	got_size = sizeof(got);
 	expected_size = sizeof(expected);
 
@@ -92,8 +94,9 @@ void check(char *got, char *expected, t_data_types type, int size)
 	}
 	else
 	{
+		err = ERR;
 		COLOR_ERROR;
-		printf("\tKO   ): \n");
+		printf("\tKO  ☠ \n");
 		if (type == T_INT)
 		{
 			printf("\t(got      : %d)\n", got);
@@ -171,5 +174,8 @@ void check(char *got, char *expected, t_data_types type, int size)
 		}
 		
 		COLOR_DEFAULT;
-	}		
+	}
+	if (err)
+		return (err);
+	return (SUCCESS);
 }

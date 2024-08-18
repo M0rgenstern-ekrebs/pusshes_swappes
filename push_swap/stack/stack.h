@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
+/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 16:50:00 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 17:02:35 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/18 13:46:43 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,30 +29,22 @@ typedef struct s_stack
 	int		nb;
 } t_stack, t_stk;
 
-//utils on a stack
+/* stack operations : */
 
 t_stack				*ft_stack_create(void);
-int					ft_stack_is_empty(t_stack *stk);
-
 void				ft_stack_free(t_stack *stk);
-void				ft_node_free(t_node *node);
+t_exit_status		ft_stack_add_top(t_stack *stk, int content);
+t_exit_status		ft_stack_delete_top(t_stack *stk);
+int					ft_stack_is_empty(t_stack *stk);
+int					ft_stack_median(t_stack stk);
 
-t_exit_status		ft_stack_delete_node_top(t_stack *stk);
-t_exit_status		ft_stack_add_node_top(t_stack *stk, int content);
-
-//operations betwwen two stacks
+/* subject operations : */
 
 t_exit_status		ft_stack_swap(t_stack *stk);
 t_exit_status		ft_stacks_sswap(t_stack *stk_a, t_stack *stk_b);
-
 t_exit_status		ft_stack_push(t_stack *stk_from, t_stack *stk_dest);
-
-
-//rotations.c
-
 t_exit_status		ft_stack_rotate(t_stack *stk);
 t_exit_status		ft_stacks_rrotate(t_stack *stk_a, t_stack *stk_b);
-
 t_exit_status		ft_stack_reverse_rotate(t_stack *stk);
 t_exit_status		ft_stacks_rreverse_rrotate(t_stack *stk_a, t_stack *stk_b);
 #endif

@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 16:36:51 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/02 20:30:30 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/18 15:14:37 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ static do_sign(const char *s, int *i, int *sign)
 int	ft_atoi(const char *s, int *error)
 {
 	unsigned int	i;
-	int				number;
+	long			number;
 	int				sign;
 
 	number = 0;
 	sign = 1;
 	i = 0;
-
 	if(!s || s[0] == '\0')
 		return (*error = ERR_NAN, ERR_NAN); 
 	while (ft_is_space(s[i]))
@@ -43,7 +42,10 @@ int	ft_atoi(const char *s, int *error)
 		number += s[i] - '0';
 		i++;
 	}
+	number = sign * number;
+	if (number > INT_MAX || number < INT_MIN)
+		return (ERR);
 	if (!s[i])
-		return (sign * number);
+		return ((int) number);
 	return (*error = ERR_NAN, ERR_NAN);
 }

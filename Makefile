@@ -9,25 +9,25 @@ SRCS =	\
 		push_swap/stack/subject_operations/ft_stacks_rrotate.c			\
 		push_swap/stack/subject_operations/ft_stacks_sswap.c			\
 		\
-		push_swap/stack/operations/ft_stack_add_top.c					\
-		push_swap/stack/operations/ft_stack_delete_top.c				\
-		push_swap/stack/operations/ft_stack_is_empty.c					\
-		push_swap/stack/operations/ft_stack_median.c					\
+		push_swap/stack/operations/ft_stack_add_top.c		\
+		push_swap/stack/operations/ft_stack_delete_top.c	\
+		push_swap/stack/operations/ft_stack_is_empty.c		\
+		push_swap/stack/operations/ft_stack_median.c		\
 		\
-		push_swap/stack/ft_stack_create.c								\
-		push_swap/stack/ft_stack_free.c									\
+		push_swap/stack/ft_stack_create.c		\
+		push_swap/stack/ft_stack_free.c			\
 		\
 		\
-		push_swap/parsing/ft_parsing.c					\
+		push_swap/parsing/ft_parsing.c				\
+		push_swap/parsing/ft_check_for_doubles.c	\
+		push_swap/parsing/ft_verif_value_ini.c		\
 		\
-		push_swap/parsing/utils/ft_check_for_doubles.c	\
-		push_swap/parsing/utils/ft_verif_nb_int.c		\
-		push_swap/parsing/utils/ft_is_space.c			\
-		push_swap/parsing/utils/ft_is_digit.c			\
-		push_swap/parsing/utils/ft_is_number.c			\
-		push_swap/parsing/utils/ft_atoi.c				\
-		push_swap/parsing/utils/ft_strlen.c				\
-		push_swap/parsing/utils/ft_strncmp.c			\
+		push_swap/parsing/utils/ft_is_space.c		\
+		push_swap/parsing/utils/ft_is_digit.c		\
+		push_swap/parsing/utils/ft_is_number.c		\
+		push_swap/parsing/utils/ft_atoi.c			\
+		push_swap/parsing/utils/ft_strlen.c			\
+		push_swap/parsing/utils/ft_strncmp.c		\
 		\
 
 PROG = srcs/main.c
