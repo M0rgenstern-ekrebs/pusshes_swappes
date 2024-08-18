@@ -6,12 +6,17 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 17:22:08 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/18 18:10:00 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/18 18:12:57 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../stack/stack.h"
 
+/**
+ * 
+ * if => 210
+ * else => 201
+ */
 static void	case_max_ind_0(t_stack *stk)
 {
 	t_node	*n0;
@@ -21,17 +26,22 @@ static void	case_max_ind_0(t_stack *stk)
 	n0 = stk->top;
 	n1 = stk->top->next;
 	n2 = stk->top->next->next;
-	if(n1->content > n2->content) //210
+	if(n1->content > n2->content)
 	{
 		return ;
 	}
-	else //201
+	else
 	{
 		ft_stack_swap(stk);
 		ft_stack_reverse_rotate(stk);
 	}
 }
 
+/**
+ * 
+ * if => 120
+ * else => 021
+ */
 static void	case_max_ind_1(t_stack *stk)
 {
 	t_node	*n0;
@@ -41,16 +51,21 @@ static void	case_max_ind_1(t_stack *stk)
 	n0 = stk->top;
 	n1 = stk->top->next;
 	n2 = stk->top->next->next;
-	if(n0->content > n2->content) //120
+	if(n0->content > n2->content)
 	{
 		ft_stack_swap(stk);
 	}
-	else //021
+	else
 	{
 		ft_stack_reverse_rotate(stk);
 	}
 }
 
+/**
+ * 
+ * if => 102
+ * else =>012
+ */
 static void	case_max_ind_2(t_stack *stk)
 {
 	t_node	*n0;
@@ -60,11 +75,11 @@ static void	case_max_ind_2(t_stack *stk)
 	n0 = stk->top;
 	n1 = stk->top->next;
 	n2 = stk->top->next->next;
-	if(n0->content > n1->content) //102
+	if(n0->content > n1->content)
 	{
 		ft_stack_rotate(stk);
 	}
-	else //012 
+	else
 	{
 		ft_stack_swap(stk);
 		ft_stack_rotate(stk);
