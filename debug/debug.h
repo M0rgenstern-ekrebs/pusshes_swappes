@@ -1,7 +1,7 @@
 #ifndef DEBUG_H
 # define DEBUG_H
 
-#include "../push_swap/push_swap.h"
+#include "../srcs_push_swap/push_swap.h"
 #include "./utils/display/display.h"
 #include <stdio.h>
 #include <limits.h>
