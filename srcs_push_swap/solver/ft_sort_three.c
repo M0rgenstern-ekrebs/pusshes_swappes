@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 17:22:08 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/18 18:12:57 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 03:10:01 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static void	case_max_ind_2(t_stack *stk)
 
 void	ft_sort_three(t_stack *stk)
 {
-    t_node	*ind_max;
+    int	ind_max;
 
     ind_max = ft_stack_ind_max;
     if (ind_max == 0)

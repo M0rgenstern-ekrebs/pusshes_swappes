@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 16:50:00 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/18 17:29:04 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 02:43:14 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 typedef struct s_node
 {
 	int				content;
+	int				index;
+	int				push_cost;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node, t_nd;

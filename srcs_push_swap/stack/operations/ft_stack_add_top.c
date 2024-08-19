@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 17:00:59 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/18 13:42:03 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 03:02:01 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ t_exit_status	ft_stack_add_top(t_stack *stk, int content)
 	top = stk->top;
 	new = malloc(sizeof(t_node));
 	if(!new)
-		return (ERR_MALLOC);
+		return (ERR);
 	new->content = content;
 	stk->nb++;
 	if (!stk->top)
 	{
 		new->next = new;
 		new->prev = new;
+		new->index = 0;
 		return (SUCCESS);
 	}
 	bottom = top->prev;
@@ -43,6 +44,8 @@ t_exit_status	ft_stack_add_top(t_stack *stk, int content)
 
 	bottom->next = new;
 	top->prev = new;
+
+	new->index = new->prev->index + 1;
 
 
 	return (SUCCESS);

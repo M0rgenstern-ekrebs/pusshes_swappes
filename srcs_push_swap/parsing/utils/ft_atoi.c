@@ -6,7 +6,7 @@
 /*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 16:36:51 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/18 15:14:37 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 02:16:23 by m0rgenstern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static do_sign(const char *s, int *i, int *sign)
 int	ft_atoi(const char *s, int *error)
 {
 	unsigned int	i;
-	long			number;
+	long long		number;
 	int				sign;
 
 	number = 0;
@@ -38,13 +38,14 @@ int	ft_atoi(const char *s, int *error)
 	do_sign(s, &i, &sign);
 	while (s[i] && ft_is_digit(s[i]))
 	{
+		if (i > 10)
+			return (*error = ERR, ERR);
 		number *= 10;
-		number += s[i] - '0';
-		i++;
+		number += s[i++] - '0';
 	}
 	number = sign * number;
 	if (number > INT_MAX || number < INT_MIN)
-		return (ERR);
+		return (*error = ERR, ERR);
 	if (!s[i])
 		return ((int) number);
 	return (*error = ERR_NAN, ERR_NAN);
