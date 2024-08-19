@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 17:01:22 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 15:51:52 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void push_from(t_stack *stk_from, t_node *pushed)
 }
 
 // still works if stk_from only contains one element;
-static void push_to(t_stack *stk_dest, const t_node *pushed)
+static void push_to(t_stack *stk_dest, t_node *pushed)
 {
 	t_node *first;
 	t_node *last;
@@ -60,6 +60,7 @@ t_exit_status	ft_stack_push(t_stack *stk_from, t_stack *stk_dest)
 	if (!stk_from || !stk_from->top || !stk_dest)
 		return (ERR);
 
+	pushed = NULL;
 	push_from(stk_from, pushed);
 	push_to(stk_dest, pushed);
 	stk_from->nb--;

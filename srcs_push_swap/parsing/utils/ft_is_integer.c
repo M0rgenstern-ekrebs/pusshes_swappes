@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_integer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 14:58:14 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/18 15:07:03 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
+#include "../parsing.h"
 
 static char	*trim_sign_and_zeros(char *value, int *psign)
 {
@@ -30,13 +30,14 @@ static char	*trim_sign_and_zeros(char *value, int *psign)
 	return (ft_substr(value, i, ft_strlen(value)));
 }
 
-static int	ft_is_integer(char *str_nb, int *error)
+int	ft_is_integer(char *str_nb, int *error)
 {
 	long	value;
 	int		len;
 	int		sign;
 
 	*error = 0;
+	value = 1;
 	sign = 1;
 	str_nb = trim_sign_and_zeros(str_nb, &sign);
 	if (!str_nb)
@@ -52,5 +53,5 @@ static int	ft_is_integer(char *str_nb, int *error)
 		if (sign == -1)
 			value *= -1;
 	}
-	return (free(str_nb), value);
+	return (free(str_nb), SUCCESS);
 }

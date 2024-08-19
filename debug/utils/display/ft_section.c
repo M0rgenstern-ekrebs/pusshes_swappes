@@ -6,13 +6,13 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 15:25:54 by ekrebs            #+#    #+#             */
-/*   Updated: 2023/12/17 18:28:05 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../debug.h"
 
-void section(char *str)
+void section(const char *str)
 {
 	COLOR_SECTION;
 	if (!str)

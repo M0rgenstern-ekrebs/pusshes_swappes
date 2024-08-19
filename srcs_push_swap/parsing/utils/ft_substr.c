@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_is_empty.c                                :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 17:01:05 by ekrebs            #+#    #+#             */
+/*   Created: 2024/08/19 15:35:02 by ekrebs            #+#    #+#             */
 /*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stack.h"
+#include "../parsing.h"
 
-/*
-returns 1 if stack is empty
-returns 0 if not 
-returns -1 if failure;
-*/
-int ft_stack_is_empty(t_stk *stk)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (!stk)
-		return (-1);
-	if (stk->top == NULL)
-		return (1);
-	return (0);
+	unsigned int	end;
+	size_t			i;
+	size_t			size;
+	char			*new;
+
+	if (!s)
+		return (NULL);
+	end = ft_strlen(s);
+	if (end <= start || end == 0)
+		len = 0;
+	size = len + 1;
+	if (end - start < len)
+		size = end - start + 1;
+	new = malloc((size) * sizeof(char));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (s[i] && i < end && i < len)
+	{
+		new[i] = s[start + i];
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
 }

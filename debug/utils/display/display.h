@@ -6,7 +6,7 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:48:15 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 18:13:18 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,11 @@ enum BackgroundColor
   bgTURQUOISE   = 106
 };
 
+void	setcolors(int foreground, int background, int attribute);
 //display functions
-void	title(char *str);
-void	section(char *str);
-void	sub_section(char *str);
+void	title(const char *str);
+void	section(const char *str);
+void	sub_section(const char *str);
 void 	space();
 
 #endif

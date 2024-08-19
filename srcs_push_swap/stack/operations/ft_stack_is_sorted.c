@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_is_sorted.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 16:57:18 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/18 17:29:58 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,29 @@
 static int  is_sorted_ascending(t_stack *stk)
 {
 	t_node	*top;
+	t_node	*tmp;
+	t_node	*last;
 
 	top = stk->top;
-	while(top && top->next)
+	last = top->prev;
+	tmp = top;
+	while(tmp != last)
 	{
-		if(!(top->content <= top->next->content))
+		if(!(tmp->content <= tmp->next->content))
 			return (0);
-		top = top->next;
-	}
-	return (1);
-}
-
-static int  is_sorted_descending(t_stack *stk)
-{
-	t_node	*top;
-
-	top = stk->top;
-	while(top && top->next)
-	{
-		if(!(top->content >= top->next->content))
-			return (0);
-		top = top->next;
+		tmp = tmp->next;
 	}
 	return (1);
 }
 
 /*
- *  checks if is sorted either ascending or descending
+ *  checks if is sorted in ascending order
  * 	Returns : 1 if true 0 if false
  *
  */
-int ft_stack_is_sorted(t_stack *stk)
+int	ft_stack_is_sorted(t_stack *stk)
 {
-	if(is_sorted_ascending || is_sorted_descending)
+	if (is_sorted_ascending(stk))
 		return (1);
 	return (0);
 }

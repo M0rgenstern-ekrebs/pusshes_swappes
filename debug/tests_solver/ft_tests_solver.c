@@ -6,14 +6,14 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:13:42 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 17:13:49 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../debug.h"
 
-ft_tests_solver(int *err)
+t_exit_status ft_tests_solver(int *err)
 {
-	
+	(void) err;
 	return (SUCCESS);
 }

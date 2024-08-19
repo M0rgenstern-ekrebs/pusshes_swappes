@@ -6,20 +6,13 @@
 /*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 17:01:02 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/16 16:11:46 by ekrebs           ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-/*
-frees the node
-*/
-static void	node_free(t_node *node)
-{
-	free(node);
-	node = NULL;
-}
+
 
 /*
 frees the stack

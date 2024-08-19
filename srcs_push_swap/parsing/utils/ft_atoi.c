@@ -3,28 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 16:36:51 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/19 02:16:23 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 15:04:37 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../parsing.h"
 
-static do_sign(const char *s, int *i, int *sign)
+static void	do_sign(const char *s, int *i, int *sign)
 {
     if (s[*i] == '-' || s[*i] == '+')
 	{
 		if (s[*i] == '-')
 			*sign *= -1;
-		*i++;
+		(*i)++;
 	}
+	return ;
 }
 
 int	ft_atoi(const char *s, int *error)
 {
-	unsigned int	i;
+	int				i;
 	long long		number;
 	int				sign;
 

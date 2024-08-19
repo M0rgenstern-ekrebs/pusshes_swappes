@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_no_doubles.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 16:33:29 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/18 15:00:01 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 15:05:32 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
+#include "../parsing.h"
 
 int	ft_no_doubles(char *argv[], int *error)
 {

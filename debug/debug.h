@@ -33,5 +33,9 @@ t_exit_status	ft_stacks_print(t_stack *stk_a, t_stack *stk_b);
 
 // TESTS
 t_exit_status	ft_main_tests(void);
+t_exit_status	ft_tests_parsing(int *err);
+t_exit_status	ft_tests_stack(int *err);
+t_exit_status	ft_tests_solver(int *err);
+
 
 #endif

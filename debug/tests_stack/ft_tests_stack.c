@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tests_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:13:38 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/18 09:20:50 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,13 +106,13 @@ static t_exit_status test_reverse_rotate()
 static t_exit_status test_suject_operations()
 {
 	section(__FUNCTION__);
-	if (test_push != SUCCESS)
+	if (test_push() != SUCCESS)
 		return (ERR);
-	if (test_swap != SUCCESS)
+	if (test_swap() != SUCCESS)
 		return (ERR);
-	if (test_rotate != SUCCESS)
+	if (test_rotate() != SUCCESS)
 		return (ERR);
-	if (test_reverse_rotate != SUCCESS)
+	if (test_reverse_rotate() != SUCCESS)
 		return (ERR);
 	return (SUCCESS);
 }

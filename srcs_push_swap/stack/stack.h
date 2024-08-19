@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 16:50:00 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/19 02:43:14 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_stack
 
 t_stack				*ft_stack_create(void);
 void				ft_stack_free(t_stack *stk);
+void				ft_node_free(t_node *node);
 
 t_exit_status		ft_stack_add_top(t_stack *stk, int content);
 t_exit_status		ft_stack_delete_top(t_stack *stk);
@@ -43,10 +44,9 @@ int					ft_stack_ind_min(t_stack *stk);
 int					ft_stack_is_empty(t_stack *stk);
 int					ft_stack_is_sorted(t_stack *stk);
 int					ft_stack_length(t_stack *stk);
-int					ft_stack_median(t_stack stk);
+int					ft_stack_median(t_stack *stk);
 
 /* subject operations : */
-
 t_exit_status		ft_stack_swap(t_stack *stk);
 t_exit_status		ft_stacks_sswap(t_stack *stk_a, t_stack *stk_b);
 t_exit_status		ft_stack_push(t_stack *stk_from, t_stack *stk_dest);

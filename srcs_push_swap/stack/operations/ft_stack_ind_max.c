@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_ind_max.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 16:55:17 by m0rgenstern       #+#    #+#             */
-/*   Updated: 2024/08/18 17:16:51 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int ft_stack_ind_max(t_stack *stk)
     int     max_content;
     t_node  *tmp;
 
-    i == 0;
+    i = 0;
     tmp = stk->top;
     max_content = tmp->content; 
-    while(tmp)
+    while(i < ft_stack_length(stk) + 1)
     {
         if (tmp->content > max_content)
         {

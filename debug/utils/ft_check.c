@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: m0rgenstern <m0rgenstern@student.42.fr>    +#+  +:+       +#+        */
+/*   By: ekrebs <ekrebs@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 17:52:51 by ekrebs            #+#    #+#             */
-/*   Updated: 2024/08/18 07:57:47 by m0rgenstern      ###   ########.fr       */
+/*   Updated: 2024/08/19 18:04:08 by ekrebs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,13 @@ t_exit_status	check(char *got, char *expected, t_data_types type, int size)
 		printf("\tKO  ☠ \n");
 		if (type == T_INT)
 		{
-			printf("\t(got      : %d)\n", got);
-			printf("\t(expected : %d)\n", expected);
+			printf("\t(got      : %d)\n", (int) got);
+			printf("\t(expected : %d)\n", (int) expected);
 		}
 		else if (type == T_CHAR)
 		{
-			printf("\t(got      : %d)\n", got);
-			printf("\t(expected : %d)\n", expected);
+			printf("\t(got      : %c)\n", (char) got);
+			printf("\t(expected : %c)\n", (char) expected);
 		}
 		else if (type == T_STRING)
 		{
@@ -145,7 +145,7 @@ t_exit_status	check(char *got, char *expected, t_data_types type, int size)
 		}
 		else if (type == T_U_LONG_LONG)
 		{
-			printf("\t(got      : %llu)\n", got);
+			printf("\t(got      : %llu)\n", (unsised long long) got);
 			printf("\t(expected : %llu)\n", expected);
 		}
 		else if (type == T_BOOL)
